@@ -3,1180 +3,466 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Abhishek Issac — sixteen-year-old developer from Wayanad, Kerala. Telegram bots, custom-ROM tinkering, and small-team automation work. Hand-built portfolio." />
-  <meta name="keywords" content="Abhishek Issac, Developer, Portfolio, Python, Pyrogram, Telegram Bots, MongoDB, PostgreSQL, Custom ROMs, OxygenOS, KernelSU, Termux, Kerala, India" />
-  <meta name="author" content="Abhishek Issac" />
-  <meta name="theme-color" content="#fbf9f2" />
+  <meta name="description" content="Albin Sanil — Commerce student, NSS leader, strategic thinker, and lifelong learner from GHSS Vaduvanchal School." />
+  <meta name="keywords" content="Albin Sanil, Portfolio, Commerce Student, NSS Leader, GHSS Vaduvanchal, Business, Strategy, Philosophy, Fitness, Chess" />
+  <meta name="author" content="Albin Sanil" />
+  <meta name="theme-color" content="#0f172a" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Abhishek Issac — Developer · Wayanad, Kerala" />
-  <meta property="og:description" content="Bots in Python, ROMs on a Poco X3 Pro, +1 BioScience by day. Hand-built portfolio." />
-  <meta property="og:url" content="https://abhishek-issac.github.io" />
-  <meta property="og:image" content="https://avatars.githubusercontent.com/u/93928612?v=4" />
+  <meta property="og:title" content="Albin Sanil — Commerce Student · NSS Leader" />
+  <meta property="og:description" content="A personal portfolio about discipline, learning, leadership, business, strategy, fitness, and building a meaningful future." />
+  <meta property="og:url" content="https://albinsanil.github.io" />
+  <meta property="og:image" content="images/profile.jpeg" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <title>Abhishek Issac — Developer · Wayanad, Kerala</title>
+  <title>Albin Sanil — Commerce Student · NSS Leader</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,350;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,350;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="assets/css/regal.css?v=3" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <style>
+    :root {
+      --bg: #080f1f;
+      --bg-soft: #0f172a;
+      --card: rgba(255, 255, 255, 0.08);
+      --card-strong: rgba(255, 255, 255, 0.13);
+      --text: #f8fafc;
+      --muted: #b6c3d8;
+      --line: rgba(255, 255, 255, 0.16);
+      --gold: #f8d777;
+      --green: #65e4a3;
+      --blue: #7dd3fc;
+      --rose: #f0abfc;
+      --shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(125, 211, 252, 0.22), transparent 34rem),
+        radial-gradient(circle at 85% 10%, rgba(248, 215, 119, 0.16), transparent 32rem),
+        radial-gradient(circle at 50% 80%, rgba(101, 228, 163, 0.13), transparent 36rem),
+        linear-gradient(135deg, #050816 0%, #0f172a 48%, #111827 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+      opacity: 0.35;
+      z-index: -2;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
+
+    .orb {
+      position: fixed;
+      border-radius: 999px;
+      filter: blur(18px);
+      opacity: 0.42;
+      z-index: -1;
+      animation: float 14s ease-in-out infinite;
+    }
+    .orb.one { width: 170px; height: 170px; background: var(--gold); top: 18%; right: 8%; }
+    .orb.two { width: 220px; height: 220px; background: var(--blue); bottom: 10%; left: 5%; animation-delay: -5s; }
+    .orb.three { width: 140px; height: 140px; background: var(--green); top: 58%; right: 20%; animation-delay: -9s; }
+
+    @keyframes float {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(18px, -28px, 0) scale(1.08); }
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(8, 15, 31, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -0.04em; }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: linear-gradient(135deg, var(--gold), var(--green));
+      color: #07111f;
+      box-shadow: 0 14px 35px rgba(248, 215, 119, 0.22);
+    }
+    .nav-links { display: flex; gap: 18px; color: var(--muted); font-size: 0.92rem; }
+    .nav-links a:hover { color: var(--gold); }
+    .pill {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 999px;
+      padding: 10px 15px;
+      color: var(--text);
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.16);
+    }
+
+    .hero { padding: 86px 0 54px; }
+    .hero-grid { display: grid; grid-template-columns: 1.12fr 0.88fr; gap: 42px; align-items: center; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 800;
+      font-size: 0.76rem;
+      margin-bottom: 20px;
+    }
+    .eyebrow::before { content: ""; width: 34px; height: 2px; background: var(--gold); }
+    h1, h2, h3 { margin: 0; line-height: 1; letter-spacing: -0.055em; }
+    h1 { font-size: clamp(4.2rem, 12vw, 10rem); }
+    h1 em, h2 em { font-family: "Playfair Display", serif; color: var(--gold); font-style: italic; font-weight: 600; }
+    .lead {
+      margin: 26px 0 0;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.32rem);
+      line-height: 1.75;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 19px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      font-weight: 800;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .btn:hover { transform: translateY(-3px); background: var(--card-strong); }
+    .btn.primary { background: linear-gradient(135deg, var(--gold), var(--green)); color: #07111f; border: 0; }
+
+    .portrait-card {
+      position: relative;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(255,255,255,0.14), rgba(255,255,255,0.05));
+      border-radius: 38px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .portrait-card::before {
+      content: "NSS · COMMERCE · LEADERSHIP";
+      position: absolute;
+      top: 28px;
+      right: -78px;
+      transform: rotate(36deg);
+      background: rgba(248, 215, 119, 0.94);
+      color: #07111f;
+      padding: 10px 88px;
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+    }
+    .portrait {
+      aspect-ratio: 4 / 5;
+      border-radius: 28px;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(125,211,252,.22), rgba(248,215,119,.2));
+      display: grid;
+      place-items: center;
+    }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .portrait-fallback {
+      font-family: "Playfair Display", serif;
+      font-size: 7rem;
+      color: var(--gold);
+    }
+    .status { display: grid; gap: 10px; padding: 18px 6px 4px; color: var(--muted); }
+    .status strong { color: var(--text); }
+
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 36px; }
+    .stat, .card {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 18px 60px rgba(0,0,0,0.18);
+    }
+    .stat { padding: 22px; }
+    .stat b { display: block; font-size: 1.8rem; color: var(--gold); letter-spacing: -0.05em; }
+    .stat span { color: var(--muted); font-size: .92rem; }
+
+    section { padding: 72px 0; }
+    .section-head { max-width: 850px; margin-bottom: 26px; }
+    h2 { font-size: clamp(2.6rem, 6vw, 5rem); }
+    .section-copy { color: var(--muted); line-height: 1.75; font-size: 1.08rem; margin-top: 18px; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { padding: 26px; }
+    .card h3 { font-size: 1.45rem; letter-spacing: -0.035em; margin-bottom: 12px; }
+    .card p, .card li { color: var(--muted); line-height: 1.7; }
+    .icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 17px;
+      background: rgba(248, 215, 119, .15);
+      color: var(--gold);
+      margin-bottom: 18px;
+      font-size: 1.4rem;
+    }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .tag { border: 1px solid var(--line); border-radius: 999px; padding: 9px 12px; color: var(--muted); background: rgba(255,255,255,.05); }
+    .values { counter-reset: value; }
+    .value-card { position: relative; overflow: hidden; }
+    .value-card::after {
+      counter-increment: value;
+      content: "0" counter(value);
+      position: absolute;
+      right: 20px;
+      bottom: -12px;
+      font-size: 5.5rem;
+      color: rgba(255,255,255,.06);
+      font-weight: 900;
+      letter-spacing: -0.08em;
+    }
+
+    .timeline { display: grid; gap: 16px; }
+    .step { display: grid; grid-template-columns: 160px 1fr; gap: 20px; align-items: start; }
+    .step-time { color: var(--gold); font-weight: 900; text-transform: uppercase; letter-spacing: .12em; font-size: .75rem; padding-top: 28px; }
+    .quote {
+      padding: clamp(28px, 6vw, 64px);
+      border-radius: 40px;
+      background: linear-gradient(135deg, rgba(248,215,119,.18), rgba(101,228,163,.12), rgba(125,211,252,.12));
+      border: 1px solid var(--line);
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .quote p { font-family: "Playfair Display", serif; font-size: clamp(1.7rem, 4vw, 3.2rem); line-height: 1.2; margin: 0; }
+    .footer { padding: 34px 0 54px; color: var(--muted); text-align: center; }
+
+    @media (max-width: 900px) {
+      .hero-grid, .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
+      .step { grid-template-columns: 1fr; gap: 0; }
+      .step-time { padding-top: 0; }
+    }
+    @media (max-width: 520px) {
+      .stats { grid-template-columns: 1fr; }
+      .pill { display: none; }
+      .hero { padding-top: 54px; }
+    }
+  </style>
 </head>
 <body>
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+  <div class="orb three"></div>
 
-  <!-- ====================== SPLASH ====================== -->
-  <div class="rg-splash" aria-hidden="true">
-    <div class="rg-splash-inner">
-      <div class="rg-splash-mark">A<em>·</em>I</div>
-      <div class="rg-splash-bar"></div>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="Albin Sanil home">
+        <span class="brand-mark">AS</span>
+        <span>Albin <span style="color: var(--gold);">Sanil</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#values">Values</a>
+        <a href="#interests">Interests</a>
+        <a href="#goals">Goals</a>
+        <a href="#contact">Motto</a>
+      </nav>
+      <a class="pill" href="#contact">Build the future →</a>
     </div>
-  </div>
-
-  <!-- ====================== SCROLL PROGRESS ====================== -->
-  <div class="rg-progress" aria-hidden="true"><span></span></div>
-
-  <!-- ====================== FLOATING NOW PILL ====================== -->
-  <div class="rg-now-pill" aria-hidden="true">
-    <span class="pulse"></span>
-    <span>now · OxygenOS 15 · Pyrogram · revising biology</span>
-  </div>
-
-  <!-- ====================== NAV ====================== -->
-  <header class="rg-nav" role="banner">
-    <a class="rg-logo" href="#top">
-      <span class="mk">A</span>
-      <span><strong>Abhishek</strong>&nbsp;<span class="rg-italic rg-gold">Issac</span></span>
-    </a>
-    <nav class="rg-nav-links" aria-label="Primary">
-      <a href="#about">about</a>
-      <a href="#stack">stack</a>
-      <a href="#skills">skills</a>
-      <a href="#services">services</a>
-      <a href="#school">school</a>
-      <a href="#projects">work</a>
-      <a href="#github">github</a>
-      <a href="#devices">devices</a>
-      <a href="#journey">journey</a>
-      <a href="#contact">contact</a>
-    </nav>
-    <a class="rg-nav-cta" href="https://t.me/abhisheksvlog" target="_blank" rel="noopener">say hi · t.me/abhisheksvlog</a>
   </header>
 
-  <!-- ====================== HERO ====================== -->
-  <section class="rg-hero" id="top">
-    <div class="rg-wrap">
-      <div class="rg-hero-grid">
-        <div>
-          <div class="rg-hero-eyebrow rg-reveal">Portfolio · MMXXVI · Wayanad, Kerala, India</div>
-          <h1 class="rg-hero-name rg-reveal" data-delay="120">
-            Abhishek<br /><em>Issac</em>.
-          </h1>
-          <p class="rg-hero-tagline rg-reveal" data-delay="280">
-            Sixteen years old. Five years on <em>GitHub</em>. One <em>Poco X3 Pro</em> that has been flashed
-            more times than the average router gets restarted. I write small, careful Python — mostly
-            <strong>Telegram bots</strong> — from a phone in a hill town in <em>Kerala</em>, India,
-            and I keep a quiet <strong>+1 BioScience</strong> textbook open on the other tab.
-          </p>
-          <div class="rg-typewriter rg-reveal" data-delay="380" data-typewriter
-               data-roles="building telegram bots in pyrogram|migrating mongo to postgres without downtime|flashing oxygenos 15 ports onto vayu|reading ncert biology at 1 am|debugging a $port bind issue, again|writing this site by hand, no frameworks">
-            <span class="pr">$</span>
-            <span class="text">building telegram bots in pyrogram</span>
-            <span class="caret"></span>
-          </div>
-          <div class="rg-hero-cta rg-reveal" data-delay="500">
-            <a class="rg-btn rg-btn-primary" data-magnet href="#projects">view selected work <span class="arr">→</span></a>
-            <a class="rg-btn" data-magnet href="https://github.com/Abhishek-Issac" target="_blank" rel="noopener">github · @abhishek-issac</a>
-            <a class="rg-btn" data-magnet href="https://t.me/abhisheksvlog" target="_blank" rel="noopener">telegram · @abhisheksvlog</a>
-          </div>
-        </div>
-
-        <div class="rg-hero-card rg-reveal scale" data-delay="280" data-tilt>
-          <div class="rg-hero-avatar">
-            <img src="https://avatars.githubusercontent.com/u/93928612?v=4&s=720"
-                 alt="Abhishek Issac portrait" loading="eager" decoding="async" />
-          </div>
-          <div class="rg-hero-badge">
-            <span class="dot">available · open to small paid bot work</span>
-            <span>↳ kerala / ist</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="rg-hero-strip rg-reveal" data-delay="600">
-        <div>
-          <div class="rg-hero-stat-num"><em id="gh-public-repos">129</em></div>
-          <div class="rg-hero-stat-label">public repositories</div>
-        </div>
-        <div>
-          <div class="rg-hero-stat-num"><em id="gh-stars">—</em></div>
-          <div class="rg-hero-stat-label">stars earned</div>
-        </div>
-        <div>
-          <div class="rg-hero-stat-num"><em id="gh-years">5</em>y</div>
-          <div class="rg-hero-stat-label">since <span id="gh-joined">2021-11-08</span></div>
-        </div>
-        <div>
-          <div class="rg-hero-stat-num"><em>16</em></div>
-          <div class="rg-hero-stat-label">years old · class +1 bio</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================== MARQUEE ====================== -->
-  <div class="rg-marquee" aria-hidden="true">
-    <div class="rg-marquee-track">
-      <span>Python</span><span class="star">✦</span>
-      <span>Pyrogram</span><span class="star">✦</span>
-      <span>MongoDB · Motor</span><span class="star">✦</span>
-      <span>PostgreSQL · asyncpg</span><span class="star">✦</span>
-      <span>Termux</span><span class="star">✦</span>
-      <span>OxygenOS 15 port</span><span class="star">✦</span>
-      <span>KernelSU</span><span class="star">✦</span>
-      <span>OrangeFox</span><span class="star">✦</span>
-      <span>Docker</span><span class="star">✦</span>
-      <span>Easypanel · Koyeb</span><span class="star">✦</span>
-      <span>HTML · CSS · JS</span><span class="star">✦</span>
-      <span>Git · GitHub</span><span class="star">✦</span>
-      <!-- duplicate -->
-      <span>Python</span><span class="star">✦</span>
-      <span>Pyrogram</span><span class="star">✦</span>
-      <span>MongoDB · Motor</span><span class="star">✦</span>
-      <span>PostgreSQL · asyncpg</span><span class="star">✦</span>
-      <span>Termux</span><span class="star">✦</span>
-      <span>OxygenOS 15 port</span><span class="star">✦</span>
-      <span>KernelSU</span><span class="star">✦</span>
-      <span>OrangeFox</span><span class="star">✦</span>
-      <span>Docker</span><span class="star">✦</span>
-      <span>Easypanel · Koyeb</span><span class="star">✦</span>
-      <span>HTML · CSS · JS</span><span class="star">✦</span>
-      <span>Git · GitHub</span><span class="star">✦</span>
-    </div>
-  </div>
-
-  <!-- ====================== ABOUT ====================== -->
-  <section class="rg-section" id="about">
-    <div class="rg-wrap">
-      <div class="rg-sec-eyebrow rg-reveal"><span class="rg-sec-num">/01</span> · about me</div>
-      <h2 class="rg-sec-title rg-reveal" data-delay="100">A short introduction, in slightly <em>too many words</em>.</h2>
-      <p class="rg-sec-kicker rg-reveal" data-delay="180">
-        Sixteen, self-taught, and <em>terminally curious</em>. Most of what I know I learned by
-        flashing the wrong file at 2 AM and then learning what the right file was supposed to be.
-      </p>
-
-      <div class="rg-about">
-        <div class="rg-prose rg-reveal x-left">
-          <p>
-            My name is <strong>Abhishek Issac</strong>. I'm sixteen years old, I live in
-            <em>Wayanad</em>, a green corner of Kerala in southern India where the wifi forgets
-            you exist about twice an hour and the sunsets are usually generous enough to make
-            up for it. I attend <strong>+1 BioScience</strong> on the NCERT syllabus, which means
-            my school week is divided fairly evenly between Botany, Zoology, Physics, Chemistry,
-            Maths, English, and Hindi — and the rest of the day belongs to the laptop.
-          </p>
-          <p>
-            I write code in <strong>Python</strong>, mostly <em>Telegram bots</em>, on top of
-            <em>Pyrogram</em>. Behind the bots there's usually <strong>MongoDB</strong> with
-            <em>Motor</em> for the fast-and-forgetful state, and <strong>PostgreSQL</strong> with
-            <em>asyncpg</em> for the data I refuse to lose. Almost all of it gets typed on a
-            <em>Poco X3 Pro</em> running <em>Termux</em>, sometimes connected to a Bluetooth
-            keyboard, sometimes not. The Poco is technically a phone but at this point it has
-            spent more of its life being a development machine.
-          </p>
-          <p>
-            Outside the editor I am a <em>professional ROM tourist</em> — I have flashed,
-            unflashed, dirty-flashed, EDL-rescued and OrangeFox-sideloaded my way through MIUI,
-            HyperOS ports, crDroid A15, Project Infinity X, crDroid A16, and finally the
-            <strong>OxygenOS 15 port</strong> for vayu/bhima that I'm currently sitting on. I
-            keep <em>KernelSU</em> on top of all of this for root and a small collection of
-            Magisk-style modules for school apps and games.
-          </p>
-          <p>
-            I prefer hand-built things over generated ones — this site, for example, is a single
-            HTML file, a single CSS file, and a single JavaScript file. <em>No frameworks,
-            no build step, no telemetry, no shortcuts</em>. The numbers you see (repo count,
-            stars, languages, recent commits) are pulled live from the GitHub REST API at
-            page-load. The contributions snake gets rebuilt by a GitHub Action every twelve hours.
-            Everything else is copied carefully out of a private notes file I keep on the same
-            phone I'm typing this from.
-          </p>
-        </div>
-
-        <div class="rg-reveal x-right" data-delay="200">
-          <div class="rg-facts">
-            <div class="rg-fact">
-              <div class="rg-fact-label">name</div>
-              <div class="rg-fact-value">Abhishek <em>Issac</em></div>
-            </div>
-            <div class="rg-fact">
-              <div class="rg-fact-label">age</div>
-              <div class="rg-fact-value"><em>16</em> &middot; class +1 bio</div>
-            </div>
-            <div class="rg-fact">
-              <div class="rg-fact-label">based in</div>
-              <div class="rg-fact-value">Wayanad &middot; Kerala</div>
-            </div>
-            <div class="rg-fact">
-              <div class="rg-fact-label">timezone</div>
-              <div class="rg-fact-value">Asia/Kolkata &middot; <em>IST</em></div>
-            </div>
-            <div class="rg-fact">
-              <div class="rg-fact-label">school</div>
-              <div class="rg-fact-value">NCERT +1 BioScience</div>
-            </div>
-            <div class="rg-fact">
-              <div class="rg-fact-label">subjects</div>
-              <div class="rg-fact-value">Bio · Phy · Chem · Maths · Eng · Hindi</div>
-            </div>
-            <div class="rg-fact">
-              <div class="rg-fact-label">daily phone</div>
-              <div class="rg-fact-value">Poco X3 Pro &middot; <em>6/128</em></div>
-            </div>
-            <div class="rg-fact">
-              <div class="rg-fact-label">current rom</div>
-              <div class="rg-fact-value"><em>OxygenOS 15</em> port (vayu)</div>
-            </div>
-            <div class="rg-fact">
-              <div class="rg-fact-label">main shell</div>
-              <div class="rg-fact-value">Termux &middot; tmux &middot; zsh</div>
-            </div>
-            <div class="rg-fact">
-              <div class="rg-fact-label">writes in</div>
-              <div class="rg-fact-value">Python &middot; <em>Pyrogram</em></div>
-            </div>
-            <div class="rg-fact">
-              <div class="rg-fact-label">stores in</div>
-              <div class="rg-fact-value">Mongo &nbsp;⇆&nbsp; Postgres</div>
-            </div>
-            <div class="rg-fact">
-              <div class="rg-fact-label">github</div>
-              <div class="rg-fact-value">@<em>Abhishek-Issac</em></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- terminal -->
-      <div class="rg-term rg-reveal" data-delay="120">
-        <div class="rg-term-bar">
-          <span class="d r"></span><span class="d y"></span><span class="d g"></span>
-          <span class="nm rg-mono">abhishek@kerala — ~/portfolio · zsh</span>
-        </div>
-<pre><span class="c"># whoami.py — the very short version</span>
-<span class="k">from</span> <span class="v">life</span> <span class="k">import</span> <span class="n">Person</span>, <span class="n">Telegram</span>, <span class="n">Android</span>
-
-<span class="v">me</span> = <span class="n">Person</span>(
-    <span class="p">name</span>=<span class="s">"Abhishek Issac"</span>,
-    <span class="p">from_</span>=<span class="s">"Wayanad, Kerala, India"</span>,
-    <span class="p">age</span>=<span class="n">16</span>,
-    <span class="p">school</span>=<span class="s">"NCERT +1 BioScience"</span>,
-    <span class="p">subjects</span>=[<span class="s">"biology"</span>, <span class="s">"physics"</span>, <span class="s">"chemistry"</span>,
-              <span class="s">"maths"</span>, <span class="s">"english"</span>, <span class="s">"hindi"</span>],
-    <span class="p">stack</span>=[<span class="s">"python"</span>, <span class="s">"pyrogram"</span>, <span class="s">"mongo"</span>, <span class="s">"postgres"</span>],
-    <span class="p">phones</span>=[<span class="s">"poco x3 pro"</span>, <span class="s">"moto g52"</span>, <span class="s">"moto e5"</span>],
-    <span class="p">rom</span>=<span class="s">"oxygenos 15 port (vayu/bhima)"</span>,
-    <span class="p">tools</span>=[<span class="s">"termux"</span>, <span class="s">"git"</span>, <span class="s">"orangefox"</span>, <span class="s">"kernelsu"</span>],
-)
-
-<span class="k">while</span> <span class="v">curious</span>:
-    <span class="v">me</span>.<span class="n">build</span>(<span class="s">"a tiny telegram bot"</span>)
-    <span class="v">me</span>.<span class="n">flash</span>(<span class="s">"another rom, carefully"</span>)
-    <span class="v">me</span>.<span class="n">study</span>(<span class="s">"a chapter of biology"</span>)
-    <span class="v">me</span>.<span class="n">push</span>(<span class="s">"a small commit to github"</span>)
-
-<span class="c"># exit code: 0 — still going.</span></pre>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================== BIG COUNTERS ====================== -->
-  <section class="rg-section" style="padding-top: 0;">
-    <div class="rg-wrap">
-      <div class="rg-counters rg-reveal">
-        <div class="rg-counter">
-          <div class="rg-counter-num"><em>129</em></div>
-          <div class="rg-counter-label">public repositories on github</div>
-        </div>
-        <div class="rg-counter">
-          <div class="rg-counter-num"><em>~70</em>%</div>
-          <div class="rg-counter-label">repos primarily written in python</div>
-        </div>
-        <div class="rg-counter">
-          <div class="rg-counter-num"><em>6</em></div>
-          <div class="rg-counter-label">custom roms tested in 2026</div>
-        </div>
-        <div class="rg-counter">
-          <div class="rg-counter-num"><em>3</em></div>
-          <div class="rg-counter-label">phones in active rotation</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================== STACK ====================== -->
-  <section class="rg-section" id="stack">
-    <div class="rg-wrap">
-      <div class="rg-sec-eyebrow rg-reveal"><span class="rg-sec-num">/02</span> · the stack</div>
-      <h2 class="rg-sec-title rg-reveal" data-delay="100">What I actually <em>use</em>, day in, day out.</h2>
-      <p class="rg-sec-kicker rg-reveal" data-delay="180">
-        Six small categories — languages, bot frameworks, storage, hosting, Android tooling, and
-        the editor I open before the kettle finishes boiling. <em>No logo wall, no buzzword bingo</em>.
-      </p>
-
-      <div class="rg-cards">
-        <div class="rg-card rg-reveal" data-tilt>
-          <div class="rg-card-eyebrow">/lang &middot; written in</div>
-          <h3>Languages</h3>
-          <p>Python first, almost always. A bit of HTML/CSS and vanilla JavaScript for the web layer, plus shell glue for ops scripts and tiny CLI helpers when I can't be bothered to write a Python file.</p>
-          <div class="rg-tags">
-            <span class="rg-tag gold">Python 3</span>
-            <span class="rg-tag">JavaScript</span>
-            <span class="rg-tag">HTML5</span>
-            <span class="rg-tag">CSS3</span>
-            <span class="rg-tag">Bash</span>
-            <span class="rg-tag">SQL</span>
-            <span class="rg-tag">Dockerfile</span>
-          </div>
-        </div>
-
-        <div class="rg-card rg-reveal" data-delay="80" data-tilt>
-          <div class="rg-card-eyebrow">/bots &middot; telegram</div>
-          <h3>Telegram</h3>
-          <p>Bots and userbots in <em>Pyrogram</em> on top of MTProto, with the Bot API as a fallback. Force-sub gates, batch generators, voice-chat moderation, small Telegram-native games, and the occasional userbot for the things bots can't do.</p>
-          <div class="rg-tags">
-            <span class="rg-tag gold">Pyrogram</span>
-            <span class="rg-tag">Telethon</span>
-            <span class="rg-tag">MTProto raw</span>
-            <span class="rg-tag">Bot API</span>
-            <span class="rg-tag">Userbots</span>
-            <span class="rg-tag">FloodWait-aware</span>
-          </div>
-        </div>
-
-        <div class="rg-card rg-reveal" data-delay="160" data-tilt>
-          <div class="rg-card-eyebrow">/data &middot; persisted</div>
-          <h3>Storage</h3>
-          <p>MongoDB for fast cache layers with TTLs, PostgreSQL for the persistent truth, JSONB for game-state blobs, and SQLite for tiny local tools that have no business hitting a server.</p>
-          <div class="rg-tags">
-            <span class="rg-tag gold">MongoDB · Motor</span>
-            <span class="rg-tag green">PostgreSQL · asyncpg</span>
-            <span class="rg-tag">JSONB</span>
-            <span class="rg-tag">SQLite</span>
-            <span class="rg-tag">Redis</span>
-          </div>
-        </div>
-
-        <div class="rg-card rg-reveal" data-tilt>
-          <div class="rg-card-eyebrow">/host &middot; production</div>
-          <h3>Hosting &amp; ops</h3>
-          <p>Whatever runs cheapest with the least pain. <em>Easypanel</em> and <em>Koyeb</em> for bots, GitHub Pages for static sites, plus a small VPS for things that need to stay alive between deploys.</p>
-          <div class="rg-tags">
-            <span class="rg-tag">Easypanel</span>
-            <span class="rg-tag">Koyeb</span>
-            <span class="rg-tag">Heroku</span>
-            <span class="rg-tag">Render</span>
-            <span class="rg-tag">DigitalOcean</span>
-            <span class="rg-tag">Docker</span>
-            <span class="rg-tag">GitHub Pages</span>
-          </div>
-        </div>
-
-        <div class="rg-card rg-reveal" data-delay="80" data-tilt>
-          <div class="rg-card-eyebrow">/android &middot; tinkering</div>
-          <h3>Android</h3>
-          <p>Custom ROMs, OrangeFox recoveries, KernelSU root, the occasional Magisk module. Two phones in the testing pile and one backup that lives permanently in fastboot.</p>
-          <div class="rg-tags">
-            <span class="rg-tag gold">OxygenOS 15 port</span>
-            <span class="rg-tag green">KernelSU</span>
-            <span class="rg-tag">crDroid</span>
-            <span class="rg-tag">HyperOS port</span>
-            <span class="rg-tag">OrangeFox</span>
-            <span class="rg-tag">Magisk</span>
-            <span class="rg-tag">Fastboot · EDL</span>
-            <span class="rg-tag">Termux</span>
-          </div>
-        </div>
-
-        <div class="rg-card rg-reveal" data-delay="160" data-tilt>
-          <div class="rg-card-eyebrow">/tools &middot; daily</div>
-          <h3>Daily tools</h3>
-          <p>Where the typing actually happens. A phone with Termux for almost everything, a laptop when one is nearby, and the same handful of CLI tools every single time.</p>
-          <div class="rg-tags">
-            <span class="rg-tag">VS Code</span>
-            <span class="rg-tag">Termux</span>
-            <span class="rg-tag">Git · GitHub</span>
-            <span class="rg-tag">tmux</span>
-            <span class="rg-tag">curl + jq</span>
-            <span class="rg-tag">FFmpeg</span>
-            <span class="rg-tag">regex</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================== SKILLS ====================== -->
-  <section class="rg-section" id="skills">
-    <div class="rg-wrap">
-      <div class="rg-sec-eyebrow rg-reveal"><span class="rg-sec-num">/03</span> · skills</div>
-      <h2 class="rg-sec-title rg-reveal" data-delay="100">An <em>honest</em> comfort-level chart.</h2>
-      <p class="rg-sec-kicker rg-reveal" data-delay="180">
-        These bars try to tell the truth. <em>Comfortable</em> means I've shipped real code with it
-        and I can debug it without a search bar. <em>Learning</em> means I've broken things with it
-        and I'm still pulling out of the curve.
-      </p>
-
-      <div class="rg-skills">
-        <div class="rg-skill rg-reveal" style="--w: 92%;">
-          <div class="rg-skill-row"><span class="rg-skill-name">Pyrogram &middot; Telegram MTProto</span><span class="rg-skill-pct">92 %</span></div>
-          <div class="rg-skill-bar"><span class="rg-skill-fill"></span></div>
-          <div class="rg-skill-tag">bots, userbots, raw MTProto, Bot API fallback</div>
-        </div>
-        <div class="rg-skill rg-reveal" style="--w: 88%;">
-          <div class="rg-skill-row"><span class="rg-skill-name">Python &middot; async, typing, packaging</span><span class="rg-skill-pct">88 %</span></div>
-          <div class="rg-skill-bar"><span class="rg-skill-fill"></span></div>
-          <div class="rg-skill-tag">asyncio, decorators, dataclasses, regex, click</div>
-        </div>
-        <div class="rg-skill rg-reveal" style="--w: 85%;">
-          <div class="rg-skill-row"><span class="rg-skill-name">Custom ROMs &middot; OrangeFox &middot; KernelSU</span><span class="rg-skill-pct">85 %</span></div>
-          <div class="rg-skill-bar"><span class="rg-skill-fill"></span></div>
-          <div class="rg-skill-tag">flashing, recovery, root, EDL unbrick, modules</div>
-        </div>
-        <div class="rg-skill rg-reveal" style="--w: 80%;">
-          <div class="rg-skill-row"><span class="rg-skill-name">MongoDB &middot; Motor &middot; TTL caches</span><span class="rg-skill-pct">80 %</span></div>
-          <div class="rg-skill-bar"><span class="rg-skill-fill"></span></div>
-          <div class="rg-skill-tag">indexes, aggregations, upserts, change-streams</div>
-        </div>
-        <div class="rg-skill rg-reveal" style="--w: 78%;">
-          <div class="rg-skill-row"><span class="rg-skill-name">Linux &middot; Termux &middot; Bash</span><span class="rg-skill-pct">78 %</span></div>
-          <div class="rg-skill-bar"><span class="rg-skill-fill"></span></div>
-          <div class="rg-skill-tag">tmux, ffmpeg pipelines, ssh, cron, systemd-ish</div>
-        </div>
-        <div class="rg-skill rg-reveal" style="--w: 72%;">
-          <div class="rg-skill-row"><span class="rg-skill-name">PostgreSQL &middot; asyncpg &middot; JSONB</span><span class="rg-skill-pct">72 %</span></div>
-          <div class="rg-skill-bar"><span class="rg-skill-fill"></span></div>
-          <div class="rg-skill-tag">migrations, jsonb queries, partial indexes, pg_dump</div>
-        </div>
-        <div class="rg-skill rg-reveal" style="--w: 70%;">
-          <div class="rg-skill-row"><span class="rg-skill-name">Git &middot; GitHub &middot; Actions</span><span class="rg-skill-pct">70 %</span></div>
-          <div class="rg-skill-bar"><span class="rg-skill-fill"></span></div>
-          <div class="rg-skill-tag">branches, rebase, PRs, basic CI workflows</div>
-        </div>
-        <div class="rg-skill rg-reveal" style="--w: 65%;">
-          <div class="rg-skill-row"><span class="rg-skill-name">Docker &middot; Easypanel &middot; Koyeb</span><span class="rg-skill-pct">65 %</span></div>
-          <div class="rg-skill-bar"><span class="rg-skill-fill"></span></div>
-          <div class="rg-skill-tag">multi-stage builds, env files, health checks</div>
-        </div>
-        <div class="rg-skill rg-reveal" style="--w: 60%;">
-          <div class="rg-skill-row"><span class="rg-skill-name">HTML &middot; CSS &middot; vanilla JS</span><span class="rg-skill-pct">60 %</span></div>
-          <div class="rg-skill-bar"><span class="rg-skill-fill"></span></div>
-          <div class="rg-skill-tag">grid, flex, custom properties, IntersectionObserver</div>
-        </div>
-        <div class="rg-skill rg-reveal" style="--w: 55%;">
-          <div class="rg-skill-row"><span class="rg-skill-name">Regex &middot; battle-tested by forwarders</span><span class="rg-skill-pct">55 %</span></div>
-          <div class="rg-skill-bar"><span class="rg-skill-fill"></span></div>
-          <div class="rg-skill-tag">caption normalization, quality tags, dedup</div>
-        </div>
-        <div class="rg-skill rg-reveal" style="--w: 45%;">
-          <div class="rg-skill-row"><span class="rg-skill-name">FFmpeg &middot; small video pipelines</span><span class="rg-skill-pct">45 %</span></div>
-          <div class="rg-skill-bar"><span class="rg-skill-fill"></span></div>
-          <div class="rg-skill-tag">trimming, resampling, hwaccel where available</div>
-        </div>
-        <div class="rg-skill rg-reveal" style="--w: 35%;">
-          <div class="rg-skill-row"><span class="rg-skill-name">Go &middot; learning slowly</span><span class="rg-skill-pct">35 %</span></div>
-          <div class="rg-skill-bar"><span class="rg-skill-fill"></span></div>
-          <div class="rg-skill-tag">small CLIs, channels, the bare-minimum stdlib</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================== SERVICES ====================== -->
-  <section class="rg-section" id="services">
-    <div class="rg-wrap">
-      <div class="rg-sec-eyebrow rg-reveal"><span class="rg-sec-num">/04</span> · services</div>
-      <h2 class="rg-sec-title rg-reveal" data-delay="100">Things I can <em>actually</em> help you with.</h2>
-      <p class="rg-sec-kicker rg-reveal" data-delay="180">
-        I take a small number of paid jobs at a time, mostly from friends-of-friends in the
-        Telegram community. <em>Six things I'm comfortable picking up</em>; everything else I'll
-        gently say no to.
-      </p>
-
-      <div class="rg-cards">
-        <div class="rg-card rg-reveal" data-tilt>
-          <div class="rg-card-eyebrow">/01 &middot; bots</div>
-          <h3>Custom <em>Telegram bots</em></h3>
-          <p>Pyrogram-based bots and userbots. Force-sub gates, file batching, broadcast tools, voice-chat moderation, small Telegram-native games, anti-abuse rules. Mongo or Postgres depending on what survives best.</p>
-        </div>
-        <div class="rg-card rg-reveal" data-delay="80" data-tilt>
-          <div class="rg-card-eyebrow">/02 &middot; automation</div>
-          <h3>Channel <em>forwarders</em></h3>
-          <p>Caption normalization, quality-tag rewriting, dedup against Mongo, multi-source → multi-destination forwarders, scheduled re-broadcasts. Turning ten ad-hoc admin tasks into one command.</p>
-        </div>
-        <div class="rg-card rg-reveal" data-delay="160" data-tilt>
-          <div class="rg-card-eyebrow">/03 &middot; data layer</div>
-          <h3>Mongo ⇆ <em>Postgres</em></h3>
-          <p>Moving an existing bot from MongoDB to PostgreSQL (or back) without downtime — sync bridges, JSONB schemas, backup &amp; restore commands, and a small admin panel for the people who actually run it.</p>
-        </div>
-        <div class="rg-card rg-reveal" data-tilt>
-          <div class="rg-card-eyebrow">/04 &middot; static sites</div>
-          <h3>Hand-built <em>landing pages</em></h3>
-          <p>One-file HTML/CSS/JS sites, deployed on GitHub Pages or Cloudflare. No frameworks, no build step, no surprise tracking. Like this site, but yours.</p>
-        </div>
-        <div class="rg-card rg-reveal" data-delay="80" data-tilt>
-          <div class="rg-card-eyebrow">/05 &middot; android</div>
-          <h3>Custom <em>ROM &amp; recovery</em> help</h3>
-          <p>Walking you through unlocking, flashing OrangeFox/TWRP, picking a ROM with an active maintainer, KernelSU setup, and EDL-unbricking. Mostly Snapdragon Xiaomi/Poco devices and a handful of OnePluses.</p>
-        </div>
-        <div class="rg-card rg-reveal" data-delay="160" data-tilt>
-          <div class="rg-card-eyebrow">/06 &middot; debug nights</div>
-          <h3>Pair-debugging <em>your bot</em></h3>
-          <p>Stuck on FloodWait spam, a deploy that won't bind to <code>$PORT</code>, or a Pyrogram session that keeps logging out? I'll sit through one voice chat with you and we'll fix it together.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================== SCHOOL ====================== -->
-  <section class="rg-section" id="school">
-    <div class="rg-wrap">
-      <div class="rg-sec-eyebrow rg-reveal"><span class="rg-sec-num">/05</span> · school</div>
-      <h2 class="rg-sec-title rg-reveal" data-delay="100">+1 BioScience, in <em>parallel</em>.</h2>
-      <p class="rg-sec-kicker rg-reveal" data-delay="180">
-        All of the above happens around school hours. Plus-One BioScience, NCERT syllabus,
-        with these six subjects rotating through every week of the term.
-      </p>
-
-      <div class="rg-cards">
-        <div class="rg-card rg-reveal" data-tilt>
-          <div class="rg-card-eyebrow">/sci · life</div>
-          <h3>Biology</h3>
-          <p>Botany &amp; Zoology — the whole reason this is BioScience and not pure science. Cell structure, plant kingdom, animal kingdom, biomolecules, transport in plants. Heaviest text-book of the lot.</p>
-        </div>
-        <div class="rg-card rg-reveal" data-delay="60" data-tilt>
-          <div class="rg-card-eyebrow">/sci · matter</div>
-          <h3>Physics</h3>
-          <p>Mechanics → kinematics → laws of motion → work, energy, power → gravitation → electricity. The chapter I always re-read at 1 AM the night before the exam, and one I quietly enjoy.</p>
-        </div>
-        <div class="rg-card rg-reveal" data-delay="120" data-tilt>
-          <div class="rg-card-eyebrow">/sci · stuff</div>
-          <h3>Chemistry</h3>
-          <p>Organic &gt; Inorganic &gt; Physical, in that exact order of comfort. The mole concept and I have an understanding. Equilibrium and I are still negotiating.</p>
-        </div>
-        <div class="rg-card rg-reveal" data-tilt>
-          <div class="rg-card-eyebrow">/sci · numbers</div>
-          <h3>Mathematics</h3>
-          <p>Calculus is friendly, vectors are fine, statistics is a continuing project. The textbook lives next to the laptop and gets opened roughly as often.</p>
-        </div>
-        <div class="rg-card rg-reveal" data-delay="60" data-tilt>
-          <div class="rg-card-eyebrow">/lang · english</div>
-          <h3>English</h3>
-          <p>I read more than the syllabus and write exactly the syllabus. The compositions are fine; the literature questions are an ongoing argument with the answer key.</p>
-        </div>
-        <div class="rg-card rg-reveal" data-delay="120" data-tilt>
-          <div class="rg-card-eyebrow">/lang · hindi</div>
-          <h3>Hindi</h3>
-          <p>Second language. Slow but improving every term. Reading is fine, writing under timer is the goal.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================== PROJECTS ====================== -->
-  <section class="rg-section" id="projects">
-    <div class="rg-wrap">
-      <div class="rg-sec-eyebrow rg-reveal"><span class="rg-sec-num">/06</span> · selected work</div>
-      <h2 class="rg-sec-title rg-reveal" data-delay="100">Projects I've actually <em>shipped</em>.</h2>
-      <p class="rg-sec-kicker rg-reveal" data-delay="180">
-        Five public projects you can star, clone, or steal patterns from today. The other
-        ~120 repos on my profile are forks, experiments and small Termux scripts —
-        <em>private repos stay private</em>, no leaks.
-      </p>
-
-      <article class="rg-project rg-reveal">
-        <div class="rg-project-meta">
-          <div><b>001</b> &middot; telegram bot</div>
-          <div>Python &middot; Pyrogram</div>
-          <div>MongoDB → Postgres</div>
-          <div>multi-group</div>
-          <div>2024 &middot; ongoing</div>
-        </div>
-        <div>
-          <h3 class="rg-project-title">Cavin <em>Game</em></h3>
-          <p class="rg-project-body">
-            A Telegram-based <strong>Word Grid</strong> challenge bot. Real-time word-guessing
-            sessions across many groups, persistent player stats, daily-refilling hint currency,
-            broadcast tools, and a "Lightning Round" achievement for clearing a grid in under 120
-            seconds. Migrated end-to-end from MongoDB to PostgreSQL while keeping a sync bridge so
-            existing groups never went down. JSONB settings tables, score-log events, and a small
-            admin panel that costs me roughly nothing to run.
-          </p>
-          <a class="rg-project-link" href="https://github.com/Abhishek-Issac/Cavin-Game" target="_blank" rel="noopener">view code →</a>
-        </div>
-      </article>
-
-      <article class="rg-project rg-reveal">
-        <div class="rg-project-meta">
-          <div><b>002</b> &middot; telegram security</div>
-          <div>Pyrogram &middot; MTProto raw</div>
-          <div>Bot + Userbot</div>
-          <div>Mongo TTL cache</div>
-          <div>2026 &middot; live</div>
-        </div>
-        <div>
-          <h3 class="rg-project-title">Cavin <em>VC Guard</em></h3>
-          <p class="rg-project-body">
-            An automated <strong>voice-chat moderator</strong> for Telegram. A dual-client
-            architecture (Bot + Userbot) watches group calls in real time and enforces join
-            rules, streaming permissions, and anti-abuse policies. It falls back gracefully
-            from userbot mute to Bot-API restrict, deduplicates joins in memory, and writes
-            every decision to a private audit log channel. Anonymous-admin handling is built
-            in because <em>somebody</em> always tries it.
-          </p>
-          <a class="rg-project-link" href="https://github.com/Abhishek-Issac/Cavin-vcguard" target="_blank" rel="noopener">view code →</a>
-        </div>
-      </article>
-
-      <article class="rg-project rg-reveal">
-        <div class="rg-project-meta">
-          <div><b>003</b> &middot; board game bot</div>
-          <div>Python &middot; Pyrogram</div>
-          <div>PostgreSQL &middot; JSONB</div>
-          <div>4-player partnership</div>
-          <div>2026 &middot; new</div>
-        </div>
-        <div>
-          <h3 class="rg-project-title">Cavin <em>Jackaroo</em></h3>
-          <p class="rg-project-body">
-            A full Telegram implementation of the <strong>Jackaroo (Tock)</strong> board game.
-            Four-player partnership matches with persistent state, CPU placeholders for empty
-            seats, special-card rules (4 backward, 7 split, etc.), compact pipe-encoded callback
-            data to fit within Telegram's 64-byte limit, and live rehydration of in-progress
-            games from PostgreSQL after every restart. The kind of project where the rules
-            engine is bigger than the bot.
-          </p>
-          <a class="rg-project-link" href="https://github.com/Abhishek-Issac/Cavin-Jackaroo" target="_blank" rel="noopener">view code →</a>
-        </div>
-      </article>
-
-      <article class="rg-project rg-reveal">
-        <div class="rg-project-meta">
-          <div><b>004</b> &middot; automation</div>
-          <div>Python &middot; Pyrogram</div>
-          <div>multi-channel</div>
-          <div>regex parsing</div>
-          <div>2024 &middot; long-running</div>
-        </div>
-        <div>
-          <h3 class="rg-project-title">4Sale <em>Forwarder</em></h3>
-          <p class="rg-project-body">
-            A high-throughput forwarder that watches source channels, normalizes captions and
-            quality tags through a battery of regexes, deduplicates against a Mongo index, and
-            rebroadcasts cleanly to destination channels — keeping admin workload on movie hubs
-            down to almost zero. The kind of bot that runs for months and only gets noticed
-            when it stops.
-          </p>
-          <a class="rg-project-link" href="https://github.com/Abhishek-Issac/4sale-forward" target="_blank" rel="noopener">view code →</a>
-        </div>
-      </article>
-
-      <article class="rg-project rg-reveal">
-        <div class="rg-project-meta">
-          <div><b>005</b> &middot; web</div>
-          <div>HTML &middot; CSS &middot; JS</div>
-          <div>no frameworks</div>
-          <div>GitHub Pages</div>
-          <div>2026 &middot; this site</div>
-        </div>
-        <div>
-          <h3 class="rg-project-title">This <em>Portfolio</em></h3>
-          <p class="rg-project-body">
-            The page you are currently reading. Three files: one HTML, one CSS (a small
-            premium-themed system in this case, gold on warm white), and one JavaScript that
-            talks to the GitHub REST API and animates the things you're scrolling past. A
-            scheduled GitHub Action rebuilds the contributions snake every twelve hours.
-            <em>Zero frameworks, zero build step, zero excuses</em>.
-          </p>
-          <a class="rg-project-link" href="https://github.com/Abhishek-Issac/Abhishek-Issac.github.io" target="_blank" rel="noopener">view code →</a>
-          <a class="rg-project-link" href="https://abhishek-issac.github.io" target="_blank" rel="noopener">view live →</a>
-        </div>
-      </article>
-
-      <article class="rg-project rg-reveal">
-        <div class="rg-project-meta">
-          <div><b>006</b> &middot; experiments</div>
-          <div>mostly Python</div>
-          <div>some shell &amp; Docker</div>
-          <div>2021 → today</div>
-          <div>120+ repos</div>
-        </div>
-        <div>
-          <h3 class="rg-project-title">The other <em>~120 repos</em></h3>
-          <p class="rg-project-body">
-            Forks I learned from, half-finished file-share bots, music players, request-join
-            handlers, small Termux scripts, and the occasional Magisk module. Some are great
-            references. Some are quiet experiments that didn't pan out. They're all on the
-            profile if you want a tour through how I learned this craft, very publicly, over
-            the last five years.
-          </p>
-          <a class="rg-project-link" href="https://github.com/Abhishek-Issac?tab=repositories" target="_blank" rel="noopener">browse all repos →</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- ====================== GITHUB SECTION ====================== -->
-  <section class="rg-section" id="github">
-    <div class="rg-wrap">
-      <div class="rg-sec-eyebrow rg-reveal"><span class="rg-sec-num">/07</span> · github</div>
-      <h2 class="rg-sec-title rg-reveal" data-delay="100">Live from <em>@Abhishek-Issac</em>.</h2>
-      <p class="rg-sec-kicker rg-reveal" data-delay="180">
-        Everything below is fetched at page-load from the GitHub REST API or rebuilt on a
-        schedule by a GitHub Action. Private repository names are excluded by design —
-        only <code>!fork &amp;&amp; !private</code> repos appear.
-      </p>
-
-      <!-- one-click setup banner -->
-      <div class="rg-gh-banner rg-reveal">
-        <span class="rg-gh-banner-icon">⚙</span>
-        <span>
-          <strong>Snake not animating?</strong>
-          The GitHub Action workflow has to live at <code>.github/workflows/snake.yml</code>
-          (Devin's OAuth couldn't push it directly — scope limit). Click → paste from
-          <code>docs/snake-workflow.yml</code> → commit. About thirty seconds.
-        </span>
-        <a class="rg-gh-banner-cta"
-           href="https://github.com/Abhishek-Issac/Abhishek-Issac.github.io/new/main?filename=.github%2Fworkflows%2Fsnake.yml"
-           target="_blank" rel="noopener">open in github editor →</a>
-      </div>
-
-      <div class="rg-gh-grid">
-        <div class="rg-gh-panel rg-reveal x-left" data-tilt>
-          <div class="rg-gh-panel-head">
-            <span>github streak · current &amp; longest</span>
-            <span>@abhishek-issac</span>
-          </div>
-          <img alt="GitHub current streak"
-               loading="lazy"
-               src="https://streak-stats.demolab.com?user=Abhishek-Issac&hide_border=true&background=fbf9f2&stroke=e2d6b0&ring=b58622&fire=b58622&currStreakNum=18130b&sideNums=18130b&currStreakLabel=18130b&sideLabels=4b3f2c&dates=8a7a55" />
-        </div>
-        <div class="rg-gh-panel rg-reveal x-right" data-delay="100" data-tilt>
-          <div class="rg-gh-panel-head">
-            <span>contributions · last year</span>
-            <span>auto-rendered</span>
-          </div>
-          <img alt="GitHub contribution heatmap"
-               loading="lazy"
-               src="https://ghchart.rshah.org/b58622/Abhishek-Issac" />
-        </div>
-      </div>
-
-      <div class="rg-gh-panel rg-reveal" data-delay="80" style="margin-top: 22px;">
-        <div class="rg-gh-panel-head">
-          <span>activity sparkline · last 31 days</span>
-          <span>commits + reviews</span>
-        </div>
-        <img alt="GitHub activity graph"
-             loading="lazy"
-             src="https://github-readme-activity-graph.vercel.app/graph?username=Abhishek-Issac&theme=minimal&hide_border=true&bg_color=fbf9f2&color=18130b&line=b58622&point=1f3b2d&area=true&area_color=b58622&radius=10" />
-      </div>
-
-      <!-- snake -->
-      <div class="rg-snake rg-reveal" data-delay="100" id="snake">
-        <div class="rg-gh-panel-head">
-          <span>contribution snake · auto-updated by github actions</span>
-          <span>@abhishek-issac</span>
-        </div>
-        <picture>
-          <source media="(prefers-color-scheme: dark)"
-                  srcset="https://raw.githubusercontent.com/Abhishek-Issac/Abhishek-Issac.github.io/output/github-snake-dark.svg" />
-          <img id="rg-snake-img"
-               alt="GitHub contribution graph rendered as a snake game"
-               src="https://raw.githubusercontent.com/Abhishek-Issac/Abhishek-Issac.github.io/output/github-snake.svg" />
-        </picture>
-        <div id="rg-snake-fb" class="rg-snake-fallback">
-          🐍 the snake will appear here once the GitHub Action has run at least once.
-          Use the <em>open in github editor</em> button above to add the workflow file, then
-          run it manually from the Actions tab.
-        </div>
-      </div>
-
-      <div class="rg-gh-grid" style="margin-top: 22px;">
-        <div class="rg-card rg-reveal" data-tilt>
-          <div class="rg-card-eyebrow">/profile · live</div>
-          <h3>By the numbers</h3>
-          <div class="rg-counters" style="border: 0; margin-top: 6px;">
-            <div class="rg-counter" style="padding: 16px 8px;">
-              <div class="rg-counter-num"><em id="gh-followers">—</em></div>
-              <div class="rg-counter-label">followers</div>
-            </div>
-            <div class="rg-counter" style="padding: 16px 8px;">
-              <div class="rg-counter-num"><em id="gh-following">—</em></div>
-              <div class="rg-counter-label">following</div>
-            </div>
-            <div class="rg-counter" style="padding: 16px 8px;">
-              <div class="rg-counter-num"><em>129</em></div>
-              <div class="rg-counter-label">public repos</div>
-            </div>
-            <div class="rg-counter" style="padding: 16px 8px;">
-              <div class="rg-counter-num"><em>2021</em></div>
-              <div class="rg-counter-label">joined GitHub</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="rg-card rg-reveal" data-delay="100" data-tilt>
-          <div class="rg-card-eyebrow">/langs · live</div>
-          <h3>Language mix</h3>
-          <p>Computed at page load by counting each public, non-fork repo's primary language. Python comes out on top — usually by a margin that surprises me.</p>
-          <div class="rg-tags" id="gh-langs">
-            <span class="rg-tag gold">Python · 70%</span>
-            <span class="rg-tag">Dockerfile</span>
-            <span class="rg-tag">Shell</span>
-            <span class="rg-tag">JavaScript</span>
-            <span class="rg-tag">HTML</span>
-            <span class="rg-tag">PHP</span>
-          </div>
-        </div>
-      </div>
-
-      <h3 class="rg-serif rg-reveal" style="margin: 50px 0 16px; font-size: clamp(22px, 2vw, 28px); font-weight: 350; letter-spacing: -0.01em;">
-        recently active public repositories
-      </h3>
-      <div class="rg-repo-list rg-reveal" data-delay="100" id="gh-repo-list">
-        <a class="rg-repo" href="https://github.com/Abhishek-Issac" target="_blank" rel="noopener">
-          <span class="rg-repo-name">loading public repos…</span>
-          <span class="rg-repo-desc">fetching from the GitHub REST API. private repo names are filtered out by design.</span>
-          <span class="rg-repo-meta"><span>—</span><span>★ —</span><span>updated —</span></span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================== DEVICES ====================== -->
-  <section class="rg-section" id="devices">
-    <div class="rg-wrap">
-      <div class="rg-sec-eyebrow rg-reveal"><span class="rg-sec-num">/08</span> · devices</div>
-      <h2 class="rg-sec-title rg-reveal" data-delay="100">The phones I <em>actually</em> own.</h2>
-      <p class="rg-sec-kicker rg-reveal" data-delay="180">
-        A short and honest list. Three phones, one daily driver, two helpers. <em>No iPhones,
-        no flagships</em> — Snapdragon mid-range from end to end.
-      </p>
-
-      <div class="rg-devices">
-        <div class="rg-device rg-reveal" data-tilt>
-          <div class="rg-device-illu">P</div>
-          <div class="rg-device-spec">/01 · daily driver · vayu</div>
-          <div class="rg-device-name">Poco <em>X3 Pro</em> · 6/128</div>
-          <div class="rg-device-note">
-            SD860, 5120 mAh, 120 Hz IPS. The phone where almost all of the code happens — Termux,
-            tmux, git, JetBrains Mono at a slightly-too-big size. Currently on <em>OxygenOS 15
-            port</em> for vayu/bhima.
-          </div>
-        </div>
-        <div class="rg-device rg-reveal" data-delay="80" data-tilt>
-          <div class="rg-device-illu">M</div>
-          <div class="rg-device-spec">/02 · backup · testing</div>
-          <div class="rg-device-name">Moto <em>G52</em> · 8/128</div>
-          <div class="rg-device-note">
-            SD680. The phone that takes the bullet when I want to test a sketchy ROM build. More
-            RAM, less heat. My "if-something-goes-wrong-here-it's-fine" device.
-          </div>
-        </div>
-        <div class="rg-device rg-reveal" data-delay="160" data-tilt>
-          <div class="rg-device-illu">e</div>
-          <div class="rg-device-spec">/03 · always on · wifi node</div>
-          <div class="rg-device-name">Moto <em>E5</em> · 2/16</div>
-          <div class="rg-device-note">
-            Tiny SoC, 2 GB of RAM, lives next to the router. Runs a couple of low-traffic background
-            bots, mostly because turning it off would feel ungrateful at this point.
-          </div>
-        </div>
-      </div>
-
-      <h3 class="rg-serif rg-reveal" style="margin: 60px 0 22px; font-size: clamp(28px, 3.5vw, 44px); font-weight: 350; letter-spacing: -0.02em;">
-        ROM journey on the X3 Pro <em>·</em> 2025 → today
-      </h3>
-      <p class="rg-sec-kicker rg-reveal" data-delay="100" style="margin-bottom: 28px;">
-        Roughly chronological. Some lasted weeks, some lasted three days. The current one is highlighted.
-      </p>
-
-      <div class="rg-rom rg-reveal" data-delay="120">
-        <div class="rg-rom-row">
-          <span class="rg-rom-when">2021 — 2025</span>
-          <div class="rg-rom-name">MIUI 12 / 13<span>factory baseline · before the custom-ROM era</span></div>
-          <span class="rg-rom-state">retired</span>
-        </div>
-        <div class="rg-rom-row">
-          <span class="rg-rom-when">jan · 2026</span>
-          <div class="rg-rom-name">HyperOS 3 port (vayu/bhima)<span>first big jump off MIUI · clean look but camera issues</span></div>
-          <span class="rg-rom-state">tested</span>
-        </div>
-        <div class="rg-rom-row">
-          <span class="rg-rom-when">mar · 2026</span>
-          <div class="rg-rom-name">crDroid A15<span>clean AOSP base · first proper KernelSU setup · NikGapps elite</span></div>
-          <span class="rg-rom-state">retired</span>
-        </div>
-        <div class="rg-rom-row">
-          <span class="rg-rom-when">mar · 2026</span>
-          <div class="rg-rom-name">Project Infinity X (A16)<span>gaming-tuned · ROG kernel · smooth thermals</span></div>
-          <span class="rg-rom-state">tested</span>
-        </div>
-        <div class="rg-rom-row">
-          <span class="rg-rom-when">apr · 2026</span>
-          <div class="rg-rom-name">crDroid A16 + KernelSU<span>dirty-flashed from A15 · NikGapps + elite package</span></div>
-          <span class="rg-rom-state">retired</span>
-        </div>
-        <div class="rg-rom-row current">
-          <span class="rg-rom-when">apr · 2026 → now</span>
-          <div class="rg-rom-name">OxygenOS 15 port (vayu/bhima)<span>two-part stable build · OrangeFox sideload · daily</span></div>
-          <span class="rg-rom-state">current</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================== PHILOSOPHY BAND ====================== -->
-  <section class="rg-band">
-    <div class="rg-wrap rg-band-inner">
-      <div class="rg-reveal x-left">
-        <div class="rg-sec-eyebrow"><span class="rg-sec-num">/09</span> · how I work</div>
-        <h2 class="rg-sec-title" style="font-size: clamp(36px, 5vw, 72px);">Build small. <em>Ship fast.</em> Refactor in public.</h2>
-      </div>
-      <div class="rg-reveal x-right" data-delay="120">
-        <p class="rg-pull">
-          I'd rather have a working <em>version one</em> in production tonight than a beautiful
-          diagram on Monday. The commit graph is my notebook — features land in tiny pieces,
-          and refactors happen out in the open instead of in a long-lived branch nobody is
-          allowed to touch.
-        </p>
-        <p class="rg-pull" style="font-size: clamp(20px, 2vw, 26px); margin-top: 24px;">
-          Two things get optimized first: <em>uptime for the people using the bot</em>, and
-          <em>readability for whoever has to debug this at 2 AM on a phone keyboard</em> —
-          which is usually a slightly-tired version of me. Everything else is negotiable.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================== PRINCIPLES ====================== -->
-  <section class="rg-section" id="principles">
-    <div class="rg-wrap">
-      <div class="rg-sec-eyebrow rg-reveal"><span class="rg-sec-num">/10</span> · principles</div>
-      <h2 class="rg-sec-title rg-reveal" data-delay="100">Three short rules I keep coming back to.</h2>
-      <p class="rg-sec-kicker rg-reveal" data-delay="180">
-        Not testimonials, not catchphrases. Three sentences I've said out loud often enough that
-        they've quietly become how I work.
-      </p>
-
-      <div class="rg-quotes">
-        <div class="rg-quote rg-reveal">
-          <p>Ship the smallest version that helps a real person. Iterate from feedback, not from a whiteboard.</p>
-          <span class="rg-quote-author">/01 — on shipping</span>
-        </div>
-        <div class="rg-quote rg-reveal" data-delay="100">
-          <p>If a script can run on a 6&nbsp;GB phone over flaky 4G, it can probably run anywhere I'd ever deploy it. Optimize for the worst environment first.</p>
-          <span class="rg-quote-author">/02 — on constraints</span>
-        </div>
-        <div class="rg-quote rg-reveal" data-delay="200">
-          <p>Future-me reading this code at 2&nbsp;AM has zero patience for cleverness. Plain functions, named variables, boring patterns.</p>
-          <span class="rg-quote-author">/03 — on readability</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================== JOURNEY / TIMELINE ====================== -->
-  <section class="rg-section" id="journey">
-    <div class="rg-wrap">
-      <div class="rg-sec-eyebrow rg-reveal"><span class="rg-sec-num">/11</span> · journey</div>
-      <h2 class="rg-sec-title rg-reveal" data-delay="100">A short, <em>honest</em> timeline.</h2>
-      <p class="rg-sec-kicker rg-reveal" data-delay="180">
-        Only verifiable dates. Pre-2021 is intentionally blank — I was learning then,
-        but nothing public, so I'm not going to invent dates I can't prove.
-      </p>
-
-      <div class="rg-timeline">
-        <div class="rg-tl-item gold rg-reveal x-left">
-          <div class="rg-tl-date">NOV · 2021</div>
-          <h4 class="rg-tl-h">Joined GitHub as @Abhishek-Issac.</h4>
-          <p class="rg-tl-p">
-            Account created on <strong>2021-11-08</strong>. Early commits were shell scripts,
-            half-broken file-share bots, and a fairly long list of forks I used to read other
-            people's code from the inside out.
-          </p>
-        </div>
-        <div class="rg-tl-item rg-reveal x-left" data-delay="100">
-          <div class="rg-tl-date">2022 — 2024</div>
-          <h4 class="rg-tl-h">Pyrogram, Mongo, deploys.</h4>
-          <p class="rg-tl-p">
-            Years of small-to-medium Telegram bots — autobatch, request-handlers, file-share
-            variants, a series-fetcher that taught me regex the hard way. MongoDB with TTL
-            caches became the default. Most of these repos are still on the profile.
-          </p>
-        </div>
-        <div class="rg-tl-item rg-reveal x-left" data-delay="200">
-          <div class="rg-tl-date">JAN — FEB · 2026</div>
-          <h4 class="rg-tl-h">Cavin Game · Mongo → Postgres.</h4>
-          <p class="rg-tl-p">
-            Migrated the whole word-grid bot to PostgreSQL with a sync bridge. JSONB settings,
-            score-log tables, and the first proper backup/restore commands I'd ever written.
-          </p>
-        </div>
-        <div class="rg-tl-item rg-reveal x-left">
-          <div class="rg-tl-date">FEB · 2026</div>
-          <h4 class="rg-tl-h">+1 BioScience · mid-term exams.</h4>
-          <p class="rg-tl-p">
-            Most of the codebase work paused while biology, physics, chemistry, maths, English
-            and Hindi took over the calendar for a few weeks.
-          </p>
-        </div>
-        <div class="rg-tl-item gold rg-reveal x-left" data-delay="100">
-          <div class="rg-tl-date">MAR · 2026</div>
-          <h4 class="rg-tl-h">Cavin VC Guard.</h4>
-          <p class="rg-tl-p">
-            Bot + userbot voice-chat moderator on top of MTProto raw. Falls back from userbot
-            mute to Bot-API restrict, deduplicates joins, writes audit logs to a private channel.
-          </p>
-        </div>
-        <div class="rg-tl-item rg-reveal x-left" data-delay="200">
-          <div class="rg-tl-date">MAR — APR · 2026</div>
-          <h4 class="rg-tl-h">Custom ROM journey on the X3 Pro.</h4>
-          <p class="rg-tl-p">
-            From MIUI 13 → HyperOS 3 port → crDroid A15 → Project Infinity X → crDroid A16 →
-            OxygenOS 15 port. Six custom ROMs in two months without losing a kernel.
-          </p>
-        </div>
-        <div class="rg-tl-item rg-reveal x-left">
-          <div class="rg-tl-date">APR · 2026</div>
-          <h4 class="rg-tl-h">Cavin Jackaroo.</h4>
-          <p class="rg-tl-p">
-            4-player partnership board game on Telegram. PostgreSQL JSONB for game state,
-            compact pipe-encoded callback data, and live rehydration of in-progress games on
-            every restart.
-          </p>
-        </div>
-        <div class="rg-tl-item gold rg-reveal x-left" data-delay="100">
-          <div class="rg-tl-date">MAY · 2026 — NOW</div>
-          <h4 class="rg-tl-h">Portfolio v3 &amp; +1 second-term prep.</h4>
-          <p class="rg-tl-p">
-            This site, rebuilt from scratch in a heavier white-and-gold theme. Live GitHub
-            data, contributions snake, and a quiet effort to keep my +1 grades from sliding
-            while bots keep shipping.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================== NOW ====================== -->
-  <section class="rg-section" id="now">
-    <div class="rg-wrap">
-      <div class="rg-sec-eyebrow rg-reveal"><span class="rg-sec-num">/12</span> · now</div>
-      <h2 class="rg-sec-title rg-reveal" data-delay="100">What I'm on, <em>this week</em>.</h2>
-      <p class="rg-sec-kicker rg-reveal" data-delay="180">
-        A loose "now page" inspired by nownownow.com. Updated by hand whenever life shifts gears.
-      </p>
-
-      <div class="rg-cards">
-        <div class="rg-card rg-reveal" data-tilt>
-          <div class="rg-card-eyebrow">/code</div>
-          <h3>building</h3>
-          <p>Tightening up Cavin VC Guard, fixing a stubborn <code>$PORT</code> binding issue on Easypanel, and refactoring the movie-hub forwarders to share a single Mongo cache layer.</p>
-        </div>
-        <div class="rg-card rg-reveal" data-delay="80" data-tilt>
-          <div class="rg-card-eyebrow">/learn</div>
-          <h3>learning</h3>
-          <p>A bit more <strong>Go</strong>, a lot more PostgreSQL internals, and how to write Pyrogram handlers that fail loudly instead of silently.</p>
-        </div>
-        <div class="rg-card rg-reveal" data-delay="160" data-tilt>
-          <div class="rg-card-eyebrow">/play</div>
-          <h3>playing</h3>
-          <p>Wuthering Waves on the Poco X3 Pro at medium settings. Long-running campaign in Genshin Impact when the schedule allows.</p>
-        </div>
-        <div class="rg-card rg-reveal" data-tilt>
-          <div class="rg-card-eyebrow">/study</div>
-          <h3>studying</h3>
-          <p>NCERT +1 BioScience second-term — Botany, Zoology, Physics, Chemistry, Maths, English, Hindi. Three chapters underlined per night, when it actually works out.</p>
-        </div>
-        <div class="rg-card rg-reveal" data-delay="80" data-tilt>
-          <div class="rg-card-eyebrow">/wear</div>
-          <h3>running on</h3>
-          <p><strong>OxygenOS 15 port</strong> on the Poco X3 Pro, KernelSU root, OrangeFox recovery on standby, Termux as the IDE, JetBrains Mono everywhere.</p>
-        </div>
-        <div class="rg-card rg-reveal" data-delay="160" data-tilt>
-          <div class="rg-card-eyebrow">/open-to</div>
-          <h3>open to</h3>
-          <p>Small paid Telegram-bot edits, weird automation problems, kind humans, and any contest where I can lose gracefully. DM me on Telegram before anywhere else.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================== CONTACT ====================== -->
-  <section class="rg-section" id="contact">
-    <div class="rg-wrap">
-      <div class="rg-sec-eyebrow rg-reveal"><span class="rg-sec-num">/13</span> · contact</div>
-      <h2 class="rg-sec-title rg-reveal" data-delay="100">Easier than you think to <em>reach me</em>.</h2>
-      <p class="rg-sec-kicker rg-reveal" data-delay="180">
-        Telegram is fastest. GitHub is best for code. Instagram is mostly memes. Email works if
-        you're patient.
-      </p>
-
-      <div class="rg-contact rg-reveal">
-        <a href="https://t.me/abhisheksvlog" target="_blank" rel="noopener">
-          <span class="rg-contact-mark">tg</span>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
           <div>
-            <div class="rg-contact-label">telegram · primary</div>
-            <div class="rg-contact-value">@abhisheksvlog</div>
+            <div class="eyebrow">Commerce Student · NSS Leader · Kerala</div>
+            <h1>Albin<br><em>Sanil</em></h1>
+            <p class="lead">
+              I am a higher secondary Commerce student and the NSS leader of GHSS Vaduvanchal School.
+              I am interested in business, strategy, philosophy, self-improvement, fitness, chess, and
+              building a disciplined life with strong values.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#about">Explore my profile</a>
+              <a class="btn" href="#goals">See my goals</a>
+            </div>
           </div>
-          <span class="rg-contact-arrow">open →</span>
-        </a>
-        <a href="https://github.com/Abhishek-Issac" target="_blank" rel="noopener">
-          <span class="rg-contact-mark">gh</span>
-          <div>
-            <div class="rg-contact-label">github · code</div>
-            <div class="rg-contact-value">github.com/Abhishek-Issac</div>
-          </div>
-          <span class="rg-contact-arrow">open →</span>
-        </a>
-        <a href="https://instagram.com/abhishek_issac_" target="_blank" rel="noopener">
-          <span class="rg-contact-mark">ig</span>
-          <div>
-            <div class="rg-contact-label">instagram · personal</div>
-            <div class="rg-contact-value">@abhishek_issac_</div>
-          </div>
-          <span class="rg-contact-arrow">open →</span>
-        </a>
-        <a href="mailto:m01812176@gmail.com">
-          <span class="rg-contact-mark">@</span>
-          <div>
-            <div class="rg-contact-label">email · slow but works</div>
-            <div class="rg-contact-value">m01812176@gmail.com</div>
-          </div>
-          <span class="rg-contact-arrow">compose →</span>
-        </a>
-      </div>
-    </div>
-  </section>
 
-  <!-- ====================== FOOTER ====================== -->
-  <footer class="rg-footer rg-wrap" role="contentinfo">
-    <div>© <span id="rg-year">2026</span> · Abhishek Issac · Wayanad, Kerala, India</div>
-    <div class="center">— hand-built &middot; no frameworks &middot; no telemetry —</div>
-    <div style="text-align: right;">
-      <a href="https://github.com/Abhishek-Issac/Abhishek-Issac.github.io" target="_blank" rel="noopener">source</a>
-      &nbsp;·&nbsp;
-      <a href="about.html">extended about</a>
-      &nbsp;·&nbsp;
-      <a href="projects.html">all projects</a>
-      &nbsp;·&nbsp;
-      <a href="#top">↑ top</a>
-    </div>
+          <aside class="portrait-card" aria-label="Profile card">
+            <div class="portrait">
+              <img src="images/profile.jpeg" alt="Albin Sanil" onerror="this.remove(); this.parentElement.innerHTML='<span class=&quot;portrait-fallback&quot;>AS</span>';" />
+            </div>
+            <div class="status">
+              <span><strong>Now:</strong> Studying in Class 12 Commerce</span>
+              <span><strong>Role:</strong> NSS Leader, GHSS Vaduvanchal School</span>
+              <span><strong>Focus:</strong> Discipline, learning, leadership, and future opportunities</span>
+            </div>
+          </aside>
+        </div>
+
+        <div class="stats" aria-label="Profile highlights">
+          <div class="stat"><b>12th</b><span>Commerce student</span></div>
+          <div class="stat"><b>NSS</b><span>School leadership</span></div>
+          <div class="stat"><b>A+</b><span>Academic target</span></div>
+          <div class="stat"><b>∞</b><span>Continuous learning mindset</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">About me</div>
+          <h2>A thoughtful student building a <em>meaningful future</em>.</h2>
+          <p class="section-copy">
+            I enjoy understanding how companies operate, how people make decisions, and how long-term
+            success is built through discipline, learning, consistent effort, and wise choices.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <div class="icon">🧠</div>
+            <h3>How I think</h3>
+            <p>
+              I am naturally analytical. I prefer to study problems carefully before making decisions,
+              understand different sides of an issue, and choose actions that create long-term value.
+            </p>
+          </article>
+          <article class="card">
+            <div class="icon">🤝</div>
+            <h3>How I treat people</h3>
+            <p>
+              I believe in treating people equally regardless of their status. I value honesty, loyalty,
+              family, respect, and solving conflicts wisely instead of creating unnecessary enemies.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="values">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Core values</div>
+          <h2>Principles I want to live by.</h2>
+        </div>
+        <div class="grid-3 values">
+          <article class="card value-card"><h3>Honesty and truth</h3><p>Tell the truth even when it is difficult, and build trust through clear actions.</p></article>
+          <article class="card value-card"><h3>Loyalty</h3><p>Stand with the people and responsibilities that matter, especially during difficult times.</p></article>
+          <article class="card value-card"><h3>Discipline</h3><p>Use routine, effort, and self-control to become stronger in studies, health, and life.</p></article>
+          <article class="card value-card"><h3>Family</h3><p>Respect family, protect relationships, and work toward being able to provide and support.</p></article>
+          <article class="card value-card"><h3>Continuous learning</h3><p>Keep improving through books, practice, observation, languages, and real experience.</p></article>
+          <article class="card value-card"><h3>Respect for others</h3><p>Value people for their character, not their position, money, or social status.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="interests">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Interests and strengths</div>
+          <h2>What I am learning and developing.</h2>
+        </div>
+        <div class="grid-3">
+          <article class="card"><div class="icon">📈</div><h3>Business</h3><p>I want to understand how companies work, how organizations are managed, and how successful businesses grow over time.</p></article>
+          <article class="card"><div class="icon">♟️</div><h3>Strategy and chess</h3><p>Strategy and chess help me build patience, planning, analysis, decision-making, and problem-solving skills.</p></article>
+          <article class="card"><div class="icon">🥊</div><h3>Fitness and boxing</h3><p>Fitness helps me improve physical conditioning, health, confidence, and mental toughness.</p></article>
+          <article class="card"><div class="icon">📚</div><h3>Philosophy</h3><p>I am interested in human behavior, leadership, ethics, different ways of thinking, and self-improvement.</p></article>
+          <article class="card"><div class="icon">🌍</div><h3>Languages</h3><p>I am improving English communication and learning German for future opportunities.</p></article>
+          <article class="card"><div class="icon">💻</div><h3>Skills under development</h3><p>DCA computer applications, content writing, social skills, business knowledge, German, English, and chess strategy.</p></article>
+        </div>
+        <div class="tag-list" aria-label="Strengths">
+          <span class="tag">Analytical thinking</span>
+          <span class="tag">Problem-solving</span>
+          <span class="tag">Curiosity</span>
+          <span class="tag">Leadership potential</span>
+          <span class="tag">Academic performance</span>
+          <span class="tag">Self-awareness</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="goals">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Educational goals</div>
+          <h2>Short-term focus. Long-term direction.</h2>
+        </div>
+        <div class="timeline">
+          <div class="step">
+            <div class="step-time">Short term</div>
+            <article class="card">
+              <h3>Build a strong academic and communication foundation</h3>
+              <ul>
+                <li>Achieve full A+ in higher secondary education.</li>
+                <li>Improve English communication skills.</li>
+                <li>Learn German language step by step.</li>
+                <li>Research and choose a suitable career path.</li>
+              </ul>
+            </article>
+          </div>
+          <div class="step">
+            <div class="step-time">Long term</div>
+            <article class="card">
+              <h3>Create a stable, successful, and balanced life</h3>
+              <ul>
+                <li>Build a stable and successful career.</li>
+                <li>Continue learning German and expand career opportunities.</li>
+                <li>Become financially secure.</li>
+                <li>Maintain strong physical fitness.</li>
+                <li>Support and provide for my future family.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="quote">
+          <div class="eyebrow" style="justify-content:center; margin-bottom: 24px;">Personal motto</div>
+          <p>“Be honest, keep learning, stay disciplined, and build a better future for yourself and the people you care about.”</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">© 2026 Albin Sanil · GHSS Vaduvanchal School · Made with discipline and purpose.</div>
   </footer>
-
-  <script src="assets/js/regal.js?v=3" defer></script>
 </body>
 </html>
